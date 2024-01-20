@@ -94,6 +94,25 @@ button.hipster:hover {
   background: var(--primary-100);
 }
 
+.new-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.search-btn {
+  width: max-content;
+  padding-bottom: 0px;
+  border-color: var(--main-light);
+  background: transparent;
+  color: var(--main-light);
+  cursor: pointer;
+  transition:none;
+}
+
+.search-btn:hover {
+  background: transparent;
+  border-bottom: 1px solid #ddd6cc;
+}
 
 /* search bar */
 form {

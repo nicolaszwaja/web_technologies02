@@ -9,6 +9,15 @@ const getAllTasks = async (req, res) => {
     }
 }
 
+const getTasksTodo = async (req, res) => {
+	try {
+        const tasksTodo = await Task.find({ completed: false });
+        res.status(200).json({ tasks: tasksTodo });
+    } catch (error) {
+        res.status(500).json({msg:error})
+    }
+}
+
 const createTask = async (req, res) => {
     try {
         const task = await Task.create(req.body)
@@ -58,7 +67,8 @@ const updateTask = async (req, res) => {
 }
 
 module.exports = { 
-    getAllTasks, 
+    getAllTasks,
+    getTasksTodo, 
     createTask,
     getTask,
     updateTask,
